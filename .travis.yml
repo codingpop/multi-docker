@@ -11,3 +11,7 @@ after_success:
   - docker build -t codingpop/multi-server ./server
   - docker build -t codingpop/multi-worker ./worker
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  - docker push codingpop/multi-nginx
+  - docker push codingpop/multi-client
+  - docker push codingpop/multi-server
+  - docker push codingpop/multi-worker
